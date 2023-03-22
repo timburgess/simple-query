@@ -100,18 +100,14 @@ export function SimpleQuery() {
   })
   const { data, fetching, error } = result
 
-  useEffect(() => {
-    if (data?.sites) {
-      console.log(data.sites)
-    }
-  }, [data])
-
   if (fetching) {
     return <div>Fetching universal tags</div>
   }
   if (error) {
     return <div>Unable to get a valid response</div>
   }
+
+  console.log('data', data)
 
   return <div>Simple Query</div>
 }
